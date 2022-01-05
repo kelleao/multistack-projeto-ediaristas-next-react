@@ -1,11 +1,11 @@
 import React from "react"
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import Router from 'next/router'
-import {Link as MuiLink, LinkProps as MuiLinkProps} from '@material-ui/core'
+import {Link as MuiLink, LinkProps as MuiLinkProps, ButtonProps} from '@material-ui/core'
 
 export interface LinkProps{
     href: string
-    mui?:MuiLinkProps
+    mui?:MuiLinkProps | ButtonProps
     next?:NextLinkProps
     Component?: React.ElementType
     onClick?: () => void

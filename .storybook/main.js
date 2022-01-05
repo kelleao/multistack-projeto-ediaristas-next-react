@@ -7,20 +7,18 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials"
-  ],
+    "@storybook/addon-links", "@storybook/addon-essentials"],
 
   webpackFinal: async (config) => {
-    config.resolve.module.push(toPath('src'))
+    config.resolve.modules.push(toPath('src'))
 
-    config.resolve.adias['@emotion/core'] = toPath(
+    config.resolve.alias['@emotion/core'] = toPath(
       'node_modules/@emotion/react'
     )
-    config.resolve.adias['@emotion/styled'] = toPath(
+    config.resolve.alias['@emotion/styled'] = toPath(
       'node_modules/@emotion/styled'
     )
-    config.resolve.adias['@emotion-theming'] = toPath(
+    config.resolve.alias['@emotion-theming'] = toPath(
       'node_modules/@emotion/react'
     )
     return config;
