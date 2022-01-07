@@ -1,7 +1,7 @@
 import React from "react"
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import Router from 'next/router'
-import {Link as MuiLink, LinkProps as MuiLinkProps, ButtonProps} from '@material-ui/core'
+import {Link as MuiLink, LinkProps as MuiLinkProps, ButtonProps, } from '@material-ui/core'
 
 export interface LinkProps{
     href: string
