@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles'
+import { styled } from '@mui/material/styles';
 import { 
     Typography, 
     ListItem, 
@@ -7,7 +7,7 @@ import {
     LinkProps,
     IconButton,
     Container
-} from '@mui/material'
+} from '@mui/material';
 
 export const FooterContainer = styled('footer')`
     background-color: ${({ theme }) => theme.palette.primary.main};
@@ -31,7 +31,6 @@ export const FooterSocialList = styled(List)`
 export const FooterListItem = styled((props) => (
     <ListItem disableGutters {...props} />
 ))`
-
     font-weight: bold;
 `;
 
@@ -63,12 +62,17 @@ export const AppList = styled('ul')`
 `;
 
 export const SocialButton = styled((props: LinkProps) => (
-    <Link component={IconButton} target={'_blank'} rel={'noopener noreferrer'} {...props} />
+  <Link
+    component={IconButton}
+    target={'_blank'}
+    rel={'noopener noreferrer'}
+    {...props}
+  />
 ))`
-    background-color: ${({ theme }) => theme.palette.primary.dark};
-    i {
-        color: ${({ theme }) => theme.palette.primary.contrastText};
-    }
+  background-color: ${({ theme }) => theme.palette.primary.dark};
+  i {
+    color: ${({ theme }) => theme.palette.primary.contrastText};
+  }
 `;
 
 export const FooterGrid = styled(Container)`

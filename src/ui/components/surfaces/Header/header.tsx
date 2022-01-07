@@ -8,8 +8,7 @@ import {
     Divider,
 } from "@material-ui/core"
 import useIsMobile from "data/hooks/useIsMobile"
-import { RoutedButtonStyled } from "ui/components/inputs/RoudedButton/RoutedButon.styles"
-
+import { RoutedButtonStyled } from 'ui/components/inputs/RoudedButton/RoudedButton.styles' 
 import Link from "ui/components/navigation/Link/Link"
 import { 
     HeaderAppBar, 
@@ -59,7 +58,6 @@ const HeaderMobile = () => {
                     color={'inherit'} 
                     onClick={() => setDrawerOpen(true)}>
                     <i className={'twf-bars'} />
-                    F
                 </IconButton>
                 <Link href={'/'}>
                     <HeaderLogo 

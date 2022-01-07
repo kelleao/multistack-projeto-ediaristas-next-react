@@ -54,7 +54,7 @@ export default class MyDocument extends Document{
                 
                 <link 
                     href="/fonts/tw-icons/css/treinaweb-icons.css"
-                    ref="stylesheet" />              
+                    rel="stylesheet" />              
             </Head>
             
             <body>
