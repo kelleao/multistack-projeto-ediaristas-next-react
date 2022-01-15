@@ -29,15 +29,18 @@ const Presentation = () => {
             Encontre agora mesmo um(a) <em>diarista</em>
             <i className={'twf-search'} />
           </SectionTitle>
+
           <SectionDescription>
             São mais de 5.000 profissionais esperando por você!
           </SectionDescription>
+
           <SectionButton
             mui={{ variant: 'contained' }}
             href={'/Encontrar-diarista'}
           >
             Encontrar um(a) diarista
           </SectionButton>
+         
           <SectionPictureContainer>
             <img src={cleanerPicture} />
           </SectionPictureContainer>

@@ -80,15 +80,15 @@ export const SectionTitle = styled('h1')`
 `;
 
 export const SectionDescription = styled('p')`
-  grid-area: description;
-  ${({ theme }) => theme.breakpoints.down('md')} {
-    margin: 0 0 ${({ theme }) => theme.spacing(5)};
-  }
-
-  ${({ theme }) => theme.breakpoints.up('md')} {
-    width: 350px;
+    grid-area: description;
+    ${({ theme }) => theme.breakpoints.down('md')} {
+      margin: 0 0 ${({ theme }) => theme.spacing(1)};
+    }
+    ${({ theme }) => theme.breakpoints.up('md')} {
+      width: 350px;
   }
 `;
+
 
 export const SectionButton = styled((props: LinkProps) => (
   <Link {...props} Component={RoutedButtonStyled} />
