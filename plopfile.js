@@ -16,6 +16,7 @@ const handlers = {
   getPath(folder, name) {
     let path = '';
     if (folder) {
+      
       path += `${folder.toLowerCase()}/`;
     }
     path += `${name.toLowerCase()}`;

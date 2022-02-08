@@ -4,5 +4,14 @@
 
   "rules": {
     "@next/next/no-img-element": "off"
+      // "prettier/prettier": [
+        //     "error",
+        //     {
+        //         "endOfLine": "crlf"
+        //     }
+        // ]
+        //"quotes": ["error", "single"]
+        //"semi": ["error", "aways"]
+        // "react-hooks/exhaustive-deps": "off"
   }
 }

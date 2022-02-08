@@ -1,5 +1,5 @@
 module.exports = function (plop, handlers) {
-    plop.setGenerator('page', {
+  plop.setGenerator('page', {
     description: 'Página',
     prompts: [
       {
