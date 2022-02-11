@@ -17,7 +17,7 @@ export const NewContactForm = () => {
         <NewContactData>
             <TextField
                 label={'E-mail'}
-                style={{ gridArea: 'mail' }}
+                style={{ gridArea: 'email' }}
                 {...register('usuario.email')}
                 error={errors?.usuario?.email !== undefined}
                 helperText={errors?.usuario?.email?.message}

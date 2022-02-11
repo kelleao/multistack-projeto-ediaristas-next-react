@@ -81,11 +81,10 @@ const DetalhesServico: React.FC<DetalhesServicoProps> = ({
                         {servicos.map((servico) => (
                             <ToggleButton value={servico.id} key={servico.id}>
                                 <i
-                                    className={
-                                        servico.icone || 'twf-cleaning-1'
-                                    }
+                                    className={servico.icone || 'twf-cleaning-1'}
                                 />
-                                {''} {servico.nome}
+                                {' '} 
+                                {servico.nome}
                             </ToggleButton>
                         ))}
                     </ToggleButtonGroup>

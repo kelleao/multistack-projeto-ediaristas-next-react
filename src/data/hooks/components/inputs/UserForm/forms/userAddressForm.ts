@@ -1,10 +1,12 @@
-import { useMemo, useEffect, useContext } from 'react'
 import { useFormContext } from 'react-hook-form'
 import useCities from 'data/hooks/useCities.hook'
+import { useMemo, useEffect, useContext } from 'react'
 import { LocationService } from 'data/services/LocationService'
+import { UserContext } from 'data/contexts/UserContext'
 
 
 export default function useAddressForm() {
+    const { userAddress, user } = useContext(UserContext).userState
 
     const {
             register,
@@ -36,7 +38,7 @@ export default function useAddressForm() {
                 
                     if(cidade){
                         setValue('endereco.codigo_ibge', cidade.codigo_ibge)
-                   }
+                }
             }
         }, [addressCity])
 
@@ -58,6 +60,8 @@ export default function useAddressForm() {
         }, [addressCep])
 
         return {
+            userAddress, 
+            user,
             control,
             errors,
             estados,

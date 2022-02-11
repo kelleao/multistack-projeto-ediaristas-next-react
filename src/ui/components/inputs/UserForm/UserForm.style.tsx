@@ -1,9 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Container  } from '@mui/material';
+import { Container } from '@mui/material';
 // import { UserFormProps } from './UserForm';
 
 export const FormcontainerStyled = styled(Container)`
-  
     ${({ theme }) => theme.breakpoints.down('md')} {
         .MuiPaper-root {
             box-shadow: none;
@@ -41,6 +40,22 @@ export const BaseGrid = styled('div')`
         gap: ${({ theme }) => theme.spacing(3)};
     }
 `;
+
+export const UserData = styled(BaseGrid)`
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        'nome nome nome'
+        'data-nascimento cpf telefone';
+
+    ${({ theme }) => theme.breakpoints.down('md')} {
+        grid-template-areas:
+            'nome'
+            'data-nascimento'
+            'cpf'
+            'telefone';
+    }
+`;
+
 export const NewContactData = styled(BaseGrid)`
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
@@ -57,21 +72,25 @@ export const NewContactData = styled(BaseGrid)`
     }
 `;
 
-export const UserData = styled(BaseGrid)`
-    grid-template-columns: repeat(3, 1fr);
+export const ContactData = styled(BaseGrid)`
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
         'email email'
-        'senha password-strength'
-        'confirmar-senha password-strength';
+        'senha-antiga senha-antiga'
+        'nova-senha confirmar-senha'
+        'password-strength _';
 
     ${({ theme }) => theme.breakpoints.down('md')} {
         grid-template-areas:
             'email'
-            'senha'
+            'senha-antiga'
+            'senha-antiga'
+            'nova-senha'
             'password-strength'
             'confirmar-senha';
     }
 `;
+
 
 export const PaymentData = styled(BaseGrid)`
     grid-template-columns: repeat(2, 1fr);
@@ -105,8 +124,18 @@ export const AddressData = styled(BaseGrid)`
     }
 `;
 
+export const FinancialData = styled(BaseGrid)`
+    grid-template-columns: 1fr;
+`;
+
+export const CitiesSelection = styled(BaseGrid)`
+    grid-template-columns: 1fr;
+    grid-template-areas: 'busca-cidade';
+`;
+
 export const PictureSelection = styled(BaseGrid)`
     grid-template-columns: 1fr;
+    padding: 0;
     
 `;
 

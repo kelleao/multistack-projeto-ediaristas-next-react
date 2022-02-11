@@ -1,20 +1,18 @@
-import React from 'react';
-import { Box } from '@mui/system';
+import React from 'react';;
 import { FormProvider } from 'react-hook-form';
 import useIsMobile from 'data/hooks/useIsMobile';
 import DetalhesServico from './_detalhes-servico';
-import { Paper, Button, Typography } from '@material-ui/core';
-import CadastroCliente, { LoginCliente } from './_cadastro-cliente';
+import Link from 'ui/components/navigation/Link/Link';
+import InformacoesPagamento from './_informacoes-pagamento';
 import useContratacao from 'data/hooks/pages/useContratacao.pages';
+import CadastroCliente, { LoginCliente } from './_cadastro-cliente';
 import PageTitle from 'ui/components/data-display/PageTitle/PageTitle';
 import Breadcrumd from 'ui/components/navigation/Breadcrumd/Breadcrumd';
 import { UserFormContainer } from 'ui/components/inputs/UserForm/UserForm';
 import { PageFormContainer } from 'ui/components/inputs/UserForm/UserForm.style';
 import SafeEnvironment from 'ui/components/feedback/SafeEnvironment/SafeEnvironment';
 import SideInformation from 'ui/components/data-display/SideInformation/SideInformation';
-import InformacoesPagamento from './_informacoes-pagamento';
-import Link from 'ui/components/navigation/Link/Link';
-
+import {Box, Button, CircularProgress, Container, Paper, Typography } from '@mui/material';
 // import { Component } from './_contratacao.styled';
 
 const Contratacao: React.FC = () => {
@@ -36,6 +34,15 @@ const Contratacao: React.FC = () => {
             setHasLogin,
             loginError,
         } = useContratacao();
+
+        if(!servicos || servicos.length < 1){
+            return (
+                <Container> sx={{ textAlig: 'center', my: 10 }}
+                    <CircularProgress />
+                </Container>
+
+            )
+        }
 
     return (
         <div>
