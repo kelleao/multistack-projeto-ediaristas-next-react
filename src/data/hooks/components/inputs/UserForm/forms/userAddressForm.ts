@@ -6,9 +6,8 @@ import { UserContext } from 'data/contexts/UserContext'
 
 
 export default function useAddressForm() {
-    const { userAddress, user } = useContext(UserContext).userState
-
-    const {
+    const { userAddress, user } = useContext(UserContext).userState,
+        {
             register,
             control,
             watch,
@@ -25,22 +24,22 @@ export default function useAddressForm() {
         listasCidades = useCities(addressState),
         opcoesCidades = useMemo(() => listasCidades.map(item => item.cidade), [
             listasCidades,
-        ])
+        ]);
 
         useEffect(() => {
             register('endereco.codigo_ibge');
-        }, [])
+        }, []);
 
         useEffect(() => {
             if(addressCity){
                 const cidade = listasCidades.find(
-                    (item) => item.cidade === addressCity)
+                    (item) => item.cidade === addressCity);
                 
                     if(cidade){
-                        setValue('endereco.codigo_ibge', cidade.codigo_ibge)
+                        setValue('endereco.codigo_ibge', cidade.codigo_ibge);
                 }
             }
-        }, [addressCity])
+        }, [addressCity]);
 
         useEffect(() => {
             const cep = (addressCep || '').replaceAll('_', '')
@@ -57,7 +56,7 @@ export default function useAddressForm() {
                 });
             }
 
-        }, [addressCep])
+        }, [addressCep]);
 
         return {
             userAddress, 
@@ -70,5 +69,5 @@ export default function useAddressForm() {
             addressCity,
             addressCep,
             register,
-        }
+        };
 }

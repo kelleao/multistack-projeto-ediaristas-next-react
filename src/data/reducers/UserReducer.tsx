@@ -1,7 +1,5 @@
 import produce from 'immer';
-import React, { useReducer, useEffect } from 'react';
-import { ApiService } from 'data/services/ApiService';
-import { ApiLinksInterface } from 'data/@types/ApiLinksInterface';
+import React, { useReducer } from 'react';
 import { UserInterface, UserType } from 'data/@types/UserInterface';
 import { CidadeInterface, EnderecoInterface } from 'data/@types/EnderecoInterface';
 
@@ -77,7 +75,6 @@ const reducer = (
 export function useUserReducer(): UserReducerInterface {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-   
     return {
         userState: state,
         userDispatch: dispatch

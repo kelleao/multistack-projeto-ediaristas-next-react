@@ -8,19 +8,20 @@ import Document, {
     DocumentInitialProps } 
 from "next/document"
 
-import { ServerStyleSheets } from "@material-ui/styles"
+import { ServerStyleSheets } from '@material-ui/styles';
 
 export default class MyDocument extends Document{
 
     static async getInitialProps(
         ctx: DocumentContext): 
         Promise<DocumentInitialProps>{
-
             const sheets = new ServerStyleSheets(),
-            originalRenderPage = ctx.renderPage
+            originalRenderPage = ctx.renderPage;
 
-            ctx.renderPage = () => originalRenderPage({
-                enhanceApp: (App) => (props) => sheets.collect(<App {...props} />)
+            ctx.renderPage = () => 
+                originalRenderPage({
+                    enhanceApp: (App) => (props) => 
+                        sheets.collect(<App {...props} />),
             });
 
             const initialProps = await Document.getInitialProps(ctx);
@@ -29,8 +30,8 @@ export default class MyDocument extends Document{
                 styles: [
                     ...React.Children.toArray(initialProps.styles),
                     sheets.getStyleElement(),
-                ]
-            }    
+                ],
+            };    
     }
     render(): JSX.Element {
         return (
@@ -69,5 +70,6 @@ export default class MyDocument extends Document{
                 </body>
             </Html>
         );
+    
     }
 }

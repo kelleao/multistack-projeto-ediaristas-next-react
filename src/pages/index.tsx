@@ -23,6 +23,16 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Index() {
+        return (
+        <div>
+            <Presentation />
+            <Advantages />
+            <FrequentQuestions />
+        </div>
+    );
+}
+
+
     // const { register, handleSubmit, formState: {errors} } = useForm({
     //     resolver: yupResolver(Produto),
     // });
@@ -42,11 +52,4 @@ export default function Index() {
     //     </div>
     // );
   
-    return (
-    <div>
-        <Presentation />
-        <Advantages />
-        <FrequentQuestions />
-    </div>
-  );
-}
+

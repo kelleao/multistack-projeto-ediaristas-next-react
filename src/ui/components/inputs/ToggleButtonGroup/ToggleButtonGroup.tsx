@@ -1,7 +1,7 @@
 import React from 'react';
 // import { } from '@mui/material';
  import { 
-     ToggleButtonGroupStyled, 
+    ToggleButtonGroupStyled, 
     ToggleButtonStyled, 
 } from './ToggleButtonGroup.style';
 

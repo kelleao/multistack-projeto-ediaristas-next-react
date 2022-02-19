@@ -53,8 +53,7 @@ const DetalhesServico: React.FC<DetalhesServicoProps> = ({
     servicos = [], 
     comodos = 0, 
     podemosAtender,
- }) => {
-
+}) => {
     const {
         register, 
         control, 
@@ -66,6 +65,7 @@ const DetalhesServico: React.FC<DetalhesServicoProps> = ({
             <Typography sx={{ fontWeight: 'bold', pb: 2 }}>
                 Qual tipo de limpeza você precisa?
             </Typography>
+            
             <Controller
                 name={'faxina.servico'}
                 defaultValue={servicos[0].id}
@@ -81,9 +81,10 @@ const DetalhesServico: React.FC<DetalhesServicoProps> = ({
                         {servicos.map((servico) => (
                             <ToggleButton value={servico.id} key={servico.id}>
                                 <i
-                                    className={servico.icone || 'twf-cleaning-1'}
-                                />
-                                {' '} 
+                                    className={
+                                    servico.icone || 'twf-cleaning-1'
+                                    }
+                                />{' '}
                                 {servico.nome}
                             </ToggleButton>
                         ))}

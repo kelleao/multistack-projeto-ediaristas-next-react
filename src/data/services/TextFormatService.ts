@@ -1,4 +1,7 @@
-import { EnderecoInterface } from 'data/@types/EnderecoInterface';
+const CurrencyFormatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+})
 
 export const TextFormatService = {
     reverseDate(date: string): string {
@@ -11,4 +14,25 @@ export const TextFormatService = {
         }
         return date.split('-').reverse().join('/');
     },
-}
+
+    dateToString(date: Date, withTime = false): string {
+        const time = date.toDateString()
+
+        if (withTime) {
+            return time.substring(0, 19);
+        }
+        return time.substring(0, 10)
+    },
+
+    getNumbersFromText(text = ''): string {
+        return text.replace(/\D/g, '');
+    },
+
+    currency(price = 0): string {
+        if (isNaN(price)) {
+            price = 0;
+        }
+
+        return CurrencyFormatter.format(price);
+    },
+};
